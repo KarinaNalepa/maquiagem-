@@ -1,0 +1,843 @@
+```css
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #3d3034;
+    background-color: #fffaf9;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* ================================
+   VARIÁVEIS
+================================ */
+
+:root {
+    --pink: #c75b78;
+    --dark-pink: #a94361;
+    --light-pink: #f8dce4;
+    --very-light-pink: #fff0f3;
+    --cream: #fffaf7;
+    --brown: #4a363b;
+    --gray: #76686c;
+    --white: #ffffff;
+    --gold: #c99b55;
+}
+
+
+/* ================================
+   CLASSES GERAIS
+================================ */
+
+.container {
+    width: 90%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.subtitle {
+    color: var(--pink);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 55px;
+}
+
+.section-title h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.8rem;
+    color: var(--brown);
+    margin-bottom: 12px;
+}
+
+.section-title > p:last-child {
+    color: var(--gray);
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.header {
+    width: 100%;
+    background-color: rgba(255, 250, 249, 0.96);
+    border-bottom: 1px solid #f2e3e5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--brown);
+}
+
+.logo span {
+    color: var(--pink);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #5b4b50;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: var(--pink);
+}
+
+.nav-button {
+    background-color: var(--pink);
+    color: var(--white);
+    padding: 11px 22px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-button:hover {
+    background-color: var(--dark-pink);
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            #f9dce4 0%,
+            #fffaf9 38%,
+            #fffaf9 100%
+        );
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.hero-text h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(3.3rem, 6vw, 5.4rem);
+    line-height: 1.05;
+    color: var(--brown);
+    margin-bottom: 25px;
+}
+
+.hero-text h1 span {
+    color: var(--pink);
+    display: block;
+    font-style: italic;
+}
+
+.hero-description {
+    color: var(--gray);
+    max-width: 530px;
+    font-size: 1rem;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.primary-button {
+    color: var(--white);
+    background-color: var(--pink);
+}
+
+.primary-button:hover {
+    background-color: var(--dark-pink);
+    transform: translateY(-3px);
+}
+
+.secondary-button {
+    border: 1px solid var(--pink);
+    color: var(--pink);
+}
+
+.secondary-button:hover {
+    background-color: var(--very-light-pink);
+}
+
+
+/* ================================
+   IMAGEM DO HERO
+================================ */
+
+.hero-image {
+    min-height: 500px;
+    border-radius: 50% 50% 20px 20px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.2),
+            rgba(199, 91, 120, 0.15)
+        ),
+        #f3c8d3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image::before {
+    content: "";
+    width: 300px;
+    height: 300px;
+    background: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.35;
+}
+
+.makeup-card {
+    width: 240px;
+    height: 300px;
+    background: linear-gradient(145deg, #ffffff, #f8e8e5);
+    border-radius: 15px;
+    box-shadow: 0 25px 50px rgba(91, 46, 58, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform: rotate(-7deg);
+}
+
+.makeup-card span {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.makeup-card p {
+    color: var(--pink);
+    letter-spacing: 5px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.makeup-card strong {
+    color: var(--brown);
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+}
+
+
+/* ================================
+   CATEGORIAS
+================================ */
+
+.categories {
+    background-color: var(--white);
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    text-align: center;
+    padding: 35px 20px;
+    border: 1px solid #f1e2e5;
+    border-radius: 15px;
+    transition: 0.3s;
+    background: #fff;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(120, 70, 85, 0.1);
+    border-color: var(--light-pink);
+}
+
+.category-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background-color: var(--very-light-pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.category-card h3 {
+    margin-bottom: 8px;
+    color: var(--brown);
+}
+
+.category-card p {
+    color: var(--gray);
+    font-size: 0.82rem;
+}
+
+
+/* ================================
+   PRODUTOS
+================================ */
+
+.products {
+    background-color: var(--cream);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(80, 45, 55, 0.06);
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(80, 45, 55, 0.12);
+}
+
+.product-image {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image span {
+    font-size: 5rem;
+    filter: drop-shadow(0 12px 10px rgba(0, 0, 0, 0.1));
+}
+
+.product-image.pink {
+    background-color: #f6d4dc;
+}
+
+.product-image.beige {
+    background-color: #f1e0d4;
+}
+
+.product-image.purple {
+    background-color: #ddd1e8;
+}
+
+.product-image.gold {
+    background-color: #f1dfb9;
+}
+
+.product-info {
+    padding: 23px;
+}
+
+.product-category {
+    color: var(--pink);
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.product-info h3 {
+    color: var(--brown);
+    font-family: "Playfair Display", serif;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.product-description {
+    color: var(--gray);
+    font-size: 0.78rem;
+    min-height: 50px;
+}
+
+.product-bottom {
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-bottom strong {
+    color: var(--brown);
+}
+
+.product-bottom button {
+    border: none;
+    background-color: var(--pink);
+    color: white;
+    padding: 9px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.product-bottom button:hover {
+    background-color: var(--dark-pink);
+}
+
+
+/* ================================
+   SOBRE
+================================ */
+
+.about {
+    background-color: var(--white);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.about-image {
+    height: 500px;
+    border-radius: 20px;
+    background:
+        linear-gradient(
+            145deg,
+            #f3c8d3,
+            #e7aebd
+        );
+    position: relative;
+    overflow: hidden;
+}
+
+.about-image::before {
+    content: "BELLA";
+    position: absolute;
+    font-family: "Playfair Display", serif;
+    font-size: 6rem;
+    color: rgba(255, 255, 255, 0.4);
+    transform: rotate(-90deg);
+    top: 170px;
+    left: -45px;
+}
+
+.about-image::after {
+    content: "MAKEUP";
+    position: absolute;
+    font-family: "Playfair Display", serif;
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.25);
+    right: -55px;
+    bottom: 70px;
+    transform: rotate(-90deg);
+}
+
+.about-decoration {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.55);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-decoration span {
+    font-size: 5rem;
+    color: var(--pink);
+}
+
+.about-text h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    color: var(--brown);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.about-text p:not(.subtitle) {
+    color: var(--gray);
+    margin-bottom: 20px;
+    max-width: 520px;
+}
+
+.about-text .button {
+    margin-top: 10px;
+}
+
+
+/* ================================
+   NEWSLETTER
+================================ */
+
+.newsletter {
+    background-color: var(--very-light-pink);
+}
+
+.newsletter-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.newsletter-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.3rem;
+    color: var(--brown);
+    margin-bottom: 10px;
+}
+
+.newsletter-content p:not(.subtitle) {
+    color: var(--gray);
+    max-width: 600px;
+}
+
+.newsletter-form {
+    display: flex;
+    min-width: 420px;
+    background-color: var(--white);
+    padding: 6px;
+    border-radius: 40px;
+    border: 1px solid #edd6dc;
+}
+
+.newsletter-form input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 12px 18px;
+    background: transparent;
+    color: var(--brown);
+}
+
+.newsletter-form button {
+    border: none;
+    background-color: var(--pink);
+    color: var(--white);
+    border-radius: 30px;
+    padding: 12px 22px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--dark-pink);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+    background-color: #392a2f;
+    color: #fff;
+    padding-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.footer .logo {
+    color: white;
+}
+
+.footer p {
+    color: #c8babe;
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #e5dce0;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+￼
+Type / to search
+￼
+￼
+￼￼
+Repository navigation
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security and quality
+Insights
+Setti
+
+.footer-links a:hover {
+    color: #f2a9bd;
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 1000px) {
+
+    .nav {
+        gap: 15px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .category-grid,
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content {
+        gap: 40px;
+    }
+
+    .about-content {
+        gap: 40px;
+    }
+
+    .newsletter-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .newsletter-form {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .nav-container {
+        min-height: auto;
+        padding: 20px 0;
+        flex-wrap: wrap;
+    }
+
+    .nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav a {
+        font-size: 0.75rem;
+    }
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        min-height: 380px;
+    }
+
+    .section-title h2 {
+        font-size: 2.2rem;
+    }
+
+    .category-grid,
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        height: 350px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-text p:not(.subtitle) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .newsletter-content h2 {
+        font-size: 2rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        background: transparent;
+        border: none;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .newsletter-form input {
+        background: white;
+        border-radius: 30px;
+        border: 1px solid #edd6dc;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+}
+```
